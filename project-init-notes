@@ -36,5 +36,9 @@ php artisan make:seeder NameSeeder
 ## FACTORY
 php artisan make:factory ModelFactory
 
+## REQUEST
+php artisan make:request StorePostRequest
+
 ## Route list
 php artisan r:l 
+

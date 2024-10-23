@@ -21,14 +21,23 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $post = new Post();
-        $post->title = $request->title;
-        $post->slug = $request->slug;
-        $post->category = $request->category;
-        $post->content = $request->content;
 
-        $post->save();
-        return redirect()->route('post.index');
+        Post::create(
+            // [
+            // 'title' => $request->title,
+            // 'slug' => $request->slug,
+            // 'category' => $request->category,
+            // 'content' => $request->content,
+            // ]
+            $request->all()
+        );
+        // $post = new Post();
+        // $post->title = $request->title;
+        // $post->slug = $request->slug;
+        // $post->category = $request->category;
+        // $post->content = $request->content;
+        // $post->save();
+        return redirect()->route('posts.index');
     }
 
     public function show(Post $post)
@@ -45,11 +54,7 @@ class PostController extends Controller
 
     public function update(Request $request, Post $post)
     {
-        $post->title = $request->title;
-        $post->slug = $request->slug;
-        $post->category = $request->category;
-        $post->content = $request->content;
-        $post->save();
+        $post->update($request->all());
         return redirect()->route('posts.show', $post);
     }
 

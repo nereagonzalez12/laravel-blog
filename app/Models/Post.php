@@ -14,6 +14,19 @@ class Post extends Model
     // Connecting to table in mysql
     protected $table = 'post';
 
+    // Fields allow to insert with Create or Update method
+    // protected $fillable = [
+    //     'title',
+    //     'slug',
+    //     'category',
+    //     'content'
+    // ];
+
+    // Fields ignored to insert with Create or Update method
+    protected $guarded = [
+        'is_active',
+    ];
+
     protected function casts(): array
     {
         return [

@@ -2,6 +2,8 @@
 
     <h1>Create a new post</h1><br>
 
+    {{ __('Client Closed Request') }}
+
     @if ($errors->any())
 
         <div>
